@@ -14,10 +14,9 @@ impl Server {
     }
 
     pub fn run(self) {
-        println!("Listening on {}:{}", self.addr, self.port);
         let full_addr = [&self.addr, ":", &self.port].concat();
+        println!("Listening on {}", full_addr);
 
-        let listener = TcpListener::bind(full_addr);
-
+        let listener = TcpListener::bind(full_addr).unwrap();
     }
 }
