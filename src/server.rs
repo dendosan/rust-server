@@ -32,7 +32,7 @@ impl Server {
 
                             match Request::try_from(&buffer[..]) {
                                 Ok(request) => {
-
+                                    dbg!(request);
                                 },
                                 Err(e) => println!("Failed to parse request: {}", e),
                             }
